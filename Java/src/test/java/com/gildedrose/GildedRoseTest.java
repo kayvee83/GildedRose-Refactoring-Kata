@@ -52,6 +52,14 @@ public class GildedRoseTest {
     }
 
     @Test
+    public void sulfurasIsLegendaryAndCanHaveMoreThan50AsQuality(){
+        List<Item> items = Arrays.asList(new Item("Sulfuras, Hand of Ragnaros", 2, 70));
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertTrue("Quality of sulfuras can be more than 50", items.get(0).quality == 70);
+    }
+
+    @Test
     public void sulfurasNeverToBeSoldOrDecreaseInQuality(){
         List<Item> items = Arrays.asList(new Item("Sulfuras, Hand of Ragnaros", 2, 20));
         GildedRose app = new GildedRose(items);
